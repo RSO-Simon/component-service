@@ -76,6 +76,7 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+
       - name: Trigger infra deploy (repository_dispatch)
         env:
           GH_TOKEN: ${{ secrets.INFRA_REPO_TOKEN }}
