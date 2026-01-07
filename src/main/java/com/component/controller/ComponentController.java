@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/components")
+@RequestMapping
 public class ComponentController {
 
     private final ComponentService componentService;
