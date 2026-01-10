@@ -27,6 +27,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 || p.startsWith("/v3/api-docs");
     }
 
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
