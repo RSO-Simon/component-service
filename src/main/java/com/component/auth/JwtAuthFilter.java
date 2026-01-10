@@ -22,7 +22,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String p = request.getRequestURI();
         return p.startsWith("/actuator")
-                | p.startsWith("/api/component/actuator")
+                || p.startsWith("/api/component/actuator")
                 || p.startsWith("/swagger")
                 || p.startsWith("/v3/api-docs");
     }
