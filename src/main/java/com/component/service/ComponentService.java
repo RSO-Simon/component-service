@@ -28,9 +28,7 @@ public class ComponentService {
 
     @Transactional
     public Optional<ComponentDto> createComponent(ComponentDto dto, Long ownerUserId) {
-        if (!dto.getOwnerUserId().equals(ownerUserId)) {
-            return Optional.empty();
-        }
+        dto.setOwnerUserId(ownerUserId);
         ComponentEntity component = mapper.toEntity(dto);
         ComponentEntity componentSaved = repo.save(component);
 
@@ -42,7 +40,7 @@ public class ComponentService {
         if (repo.findByOwnerUserIdAndId(ownerUserId, componentId).isEmpty())
             return Optional.empty();
 
-        return repo.findById(componentId)
+        return repo.findByOwnerUserIdAndId(ownerUserId, componentId)
                 .map(entity -> {
                     component.setId(componentId);
                     component.setOwnerUserId(ownerUserId);
