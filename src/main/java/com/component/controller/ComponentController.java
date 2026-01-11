@@ -22,7 +22,7 @@ import java.util.List;
         description = "Operations for managing component definitions owned by the authenticated user"
 )
 @RestController
-@RequestMapping("/api/components")
+@RequestMapping
 public class ComponentController {
 
     private final ComponentService componentService;
