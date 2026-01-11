@@ -25,9 +25,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 || p.startsWith("/api/components/actuator")
                 || p.startsWith("/swagger")
                 || p.startsWith("/v3/api-docs")
-                || p.startsWith("/api/ships/actuator")
-                || p.startsWith("/api/ships/swagger")
-                || p.startsWith("/api/ships/v3/api-docs");
+                || p.startsWith("/api/components/swagger")
+                || p.startsWith("/api/components/v3/api-docs");
     }
 
 
